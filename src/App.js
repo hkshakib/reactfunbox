@@ -10,7 +10,7 @@ import MemoryGame from "./pages/MemoryGame";
 const App = () => {
   return (
     <Router>
-      <div className="flex bg-black h-[100vh] justify-center items-center">
+      <div className="flex bg-slate-700 h-[100vh] justify-center items-center font-mono">
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/tic-tac-toe" element={<TicTacToe/>} />
