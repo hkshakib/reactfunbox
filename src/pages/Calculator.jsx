@@ -140,7 +140,7 @@ const Calculator = () =>  {
   return (
     <div className='flex flex-col basis-[100%] justify-center items-center'>
       <div className="flex uppercase text-white">CALCULATE WHAT YOU WANT</div>
-      <div className="grid grid-cols-4 grid-rows-auto h-[700px] w-[700px] justify-center">
+      <div className="grid grid-cols-4 grid-rows-auto h-[350px] w-[300px] justify-center md:h-[700px] md:w-[700px]">
         <div className="col-span-full bg-white  flex flex-col items-end justify-between  break-words">
           <div className="text-black text-base">
             {formatOperand(previousOperand)} {operation}
