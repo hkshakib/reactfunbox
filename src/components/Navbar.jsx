@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { AiOutlineMenu } from "react-icons/ai";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -13,29 +14,26 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <span className="text-white font-bold text-xl">FUN BOX</span>
+              <a href="/" className="text-white font-bold text-xl">FUN BOX</a>
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
-                <NavLink to="/" activeClassName="text-white">
-                  Home
-                </NavLink>
-                <NavLink to="/tic-tac-toe" activeClassName="text-white">
+                <NavLink to="/tic-tac-toe" activeClassName="text-white font-bold uppercase">
                   TicTacToe
                 </NavLink>
-                <NavLink to="/to-do" activeClassName="text-white">
+                <NavLink to="/to-do" activeClassName="text-white font-bold uppercase">
                   TodoList
                 </NavLink>
-                <NavLink to="/snake" activeClassName="text-white">
+                <NavLink to="/snake" activeClassName="text-white font-bold uppercase">
                   Snake Game
                 </NavLink>
-                <NavLink to="/memory-game" activeClassName="text-white">
+                <NavLink to="/memory-game" activeClassName="text-white font-bold uppercase">
                   Memory Game
                 </NavLink>
-                <NavLink to="/calculator" activeClassName="text-white">
+                <NavLink to="/calculator" activeClassName="text-white font-bold uppercase">
                   Calculator
                 </NavLink>
-                <NavLink to="/quiz" activeClassName="text-white">
+                <NavLink to="/quiz" activeClassName="text-white font-bold uppercase">
                   Quiz
                 </NavLink>
               </div>
@@ -44,26 +42,14 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               type="button"
-              className="text-white hover:text-gray-300 focus:outline-none focus:text-gray-300"
+              className="text-white cursor-pointer hover:text-gray-300 focus:outline-none focus:text-gray-300"
               onClick={toggleMenu}
             >
-              <svg
-                className="h-6 w-6 fill-current"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
                 {menuOpen ? (
-                  <path
-                    className="fill-current text-white"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
+                  <AiOutlineMenu/>
                 ) : (
-                  <path
-                    className="fill-current text-white"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
+                  <AiOutlineMenu/>
                 )}
-              </svg>
             </button>
           </div>
         </div>
@@ -71,10 +57,7 @@ const Navbar = () => {
           className={`md:hidden ${menuOpen ? 'block' : 'hidden'}`}
           id="mobile-menu"
         >
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <NavLink to="/" activeClassName="text-white">
-              Home
-            </NavLink>
+          <div className=" flex flex-col items-center px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <NavLink to="/tic-tac-toe" activeClassName="text-white">
               TicTacToe
             </NavLink>
@@ -106,8 +89,8 @@ const NavLink = ({ to, activeClassName, children }) => {
   return (
     <a
       href={to}
-      className={`text-black hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium ${
-        isActive ? activeClassName : ''
+      className={`text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium ${
+        isActive ? activeClassName : 'text-blue-100'
       }`}
     >
       {children}

@@ -49,7 +49,7 @@ const Quiz = () => {
   };
 
   if (!quizData) {
-    return <div>Loading...</div>;
+    return <div className='flex basis[100%] justify-center items-center uppercase text-white'>Loading...</div>;
   }
 
   if (quizComplete) {
