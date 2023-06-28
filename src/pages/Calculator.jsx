@@ -11,6 +11,7 @@ export const ACTIONS = {
 }
 
 function reducer(state, { type, payload }) {
+  // eslint-disable-next-line
   switch (type) {
     case ACTIONS.ADD_DIGIT:
       if (state.overwrite) {
@@ -83,9 +84,9 @@ function reducer(state, { type, payload }) {
         state.currentOperand == null ||
         state.previousOperand == null
       ) {
-        return state
+        return state;
       }
-
+      
       return {
         ...state,
         overwrite: true,
@@ -99,24 +100,25 @@ function reducer(state, { type, payload }) {
 function evaluate({ currentOperand, previousOperand, operation }) {
   const prev = parseFloat(previousOperand)
   const current = parseFloat(currentOperand)
-  if (isNaN(prev) || isNaN(current)) return ""
-  let computation = ""
+  if (isNaN(prev) || isNaN(current)) return "";
+  let computation = "";
+  // eslint-disable-next-line
   switch (operation) {
     case "+":
-      computation = prev + current
-      break
+      computation = prev + current;
+      break;
     case "-":
-      computation = prev - current
-      break
+      computation = prev - current;
+      break;
     case "*":
-      computation = prev * current
-      break
+      computation = prev * current;
+      break;
     case "÷":
-      computation = prev / current
-      break
+      computation = prev / current;
+      break;
   }
 
-  return computation.toString()
+  return computation.toString();
 }
 
 const INTEGER_FORMATTER = new Intl.NumberFormat("en-us", {
@@ -136,43 +138,46 @@ const Calculator = () =>  {
   )
 
   return (
-    <div className="grid grid-cols-4 grid-rows-auto h-[700px] w-[700px] justify-center">
-      <div className="col-span-full bg-white  flex flex-col items-end justify-between  break-words">
-        <div className="text-black text-base">
-          {formatOperand(previousOperand)} {operation}
+    <div className='flex flex-col basis-[100%] justify-center items-center'>
+      <div className="flex uppercase text-white">CALCULATE WHAT YOU WANT</div>
+      <div className="grid grid-cols-4 grid-rows-auto h-[700px] w-[700px] justify-center">
+        <div className="col-span-full bg-white  flex flex-col items-end justify-between  break-words">
+          <div className="text-black text-base">
+            {formatOperand(previousOperand)} {operation}
+          </div>
+          <div className="text-black text-2xl">{formatOperand(currentOperand)}</div>
         </div>
-        <div className="text-black text-2xl">{formatOperand(currentOperand)}</div>
+        <button
+          className="col-span-2 cursor-pointer text-2xl border border-white outline-none bg-white bg-opacity-75 hover:bg-opacity-90 focus:bg-opacity-90"
+          onClick={() => dispatch({ type: ACTIONS.CLEAR })}
+        >
+          AC
+        </button>
+        <button className="cursor-pointer text-2xl border border-white outline-none bg-white bg-opacity-75 hover:bg-opacity-90 focus:bg-opacity-90" onClick={() => dispatch({ type: ACTIONS.DELETE_DIGIT })}>
+          DEL
+        </button>
+        <OperationButton operation="÷" dispatch={dispatch} />
+        <DigitButton digit="1" dispatch={dispatch} />
+        <DigitButton digit="2" dispatch={dispatch} />
+        <DigitButton digit="3" dispatch={dispatch} />
+        <OperationButton operation="*" dispatch={dispatch} />
+        <DigitButton digit="4" dispatch={dispatch} />
+        <DigitButton digit="5" dispatch={dispatch} />
+        <DigitButton digit="6" dispatch={dispatch} />
+        <OperationButton operation="+" dispatch={dispatch} />
+        <DigitButton digit="7" dispatch={dispatch} />
+        <DigitButton digit="8" dispatch={dispatch} />
+        <DigitButton digit="9" dispatch={dispatch} />
+        <OperationButton operation="-" dispatch={dispatch} />
+        <DigitButton digit="." dispatch={dispatch} />
+        <DigitButton digit="0" dispatch={dispatch} />
+        <button
+          className="col-span-2 cursor-pointer text-2xl border border-white outline-none bg-white bg-opacity-75 hover:bg-opacity-90 focus:bg-opacity-90"
+          onClick={() => dispatch({ type: ACTIONS.EVALUATE })}
+        >
+          =
+        </button>
       </div>
-      <button
-        className="col-span-2 cursor-pointer text-2xl border border-white outline-none bg-white bg-opacity-75 hover:bg-opacity-90 focus:bg-opacity-90"
-        onClick={() => dispatch({ type: ACTIONS.CLEAR })}
-      >
-        AC
-      </button>
-      <button className="cursor-pointer text-2xl border border-white outline-none bg-white bg-opacity-75 hover:bg-opacity-90 focus:bg-opacity-90" onClick={() => dispatch({ type: ACTIONS.DELETE_DIGIT })}>
-        DEL
-      </button>
-      <OperationButton operation="÷" dispatch={dispatch} />
-      <DigitButton digit="1" dispatch={dispatch} />
-      <DigitButton digit="2" dispatch={dispatch} />
-      <DigitButton digit="3" dispatch={dispatch} />
-      <OperationButton operation="*" dispatch={dispatch} />
-      <DigitButton digit="4" dispatch={dispatch} />
-      <DigitButton digit="5" dispatch={dispatch} />
-      <DigitButton digit="6" dispatch={dispatch} />
-      <OperationButton operation="+" dispatch={dispatch} />
-      <DigitButton digit="7" dispatch={dispatch} />
-      <DigitButton digit="8" dispatch={dispatch} />
-      <DigitButton digit="9" dispatch={dispatch} />
-      <OperationButton operation="-" dispatch={dispatch} />
-      <DigitButton digit="." dispatch={dispatch} />
-      <DigitButton digit="0" dispatch={dispatch} />
-      <button
-        className="col-span-2 cursor-pointer text-2xl border border-white outline-none bg-white bg-opacity-75 hover:bg-opacity-90 focus:bg-opacity-90"
-        onClick={() => dispatch({ type: ACTIONS.EVALUATE })}
-      >
-        =
-      </button>
     </div>
   )
 }

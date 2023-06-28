@@ -14,13 +14,15 @@ const TicTacToe = () => {
     }
   
     return (
-      <div className="flex flex-col">
-        <h1 className="text-[30px] font-bold mb-6 text-white">Tic Tac Toe</h1>
-        <Board onWinner={handleWinner} />
-        
-        {winner && <Announce winner={winner} />}
+      <div className='flex flex-col basis-[100%] justify-center items-center'>
+        <div className='flex text-white uppercase'>Play Your Favourite Tic Tac Toe</div>
+        <div className="flex flex-col">
+          <Board onWinner={handleWinner} />
+          
+          {winner && <Announce winner={winner} />}
 
-        <button onClick={handlePlayAgain} className='text-2xl font-bold text-white mt-[40px] border border-white h-[50px] hover:text-black hover:bg-white'>Play Again</button>
+          <button onClick={handlePlayAgain} className='text-2xl font-bold text-white mt-[40px] border border-white h-[50px] hover:text-black hover:bg-white'>Play Again</button>
+        </div>
       </div>
     );
 };
