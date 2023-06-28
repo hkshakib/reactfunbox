@@ -26,6 +26,11 @@ The Quiz app offers an enjoyable way to test your knowledge on various topics. I
 
 The Snake Game is a classic arcade game where you control a snake to eat food. Be careful not to collide with the walls or your own body! Enjoy the nostalgic gameplay and see how long you can survive.
 
+### Memory Game
+
+The Memory Game is a fun and challenging game where you test your memory skills. Flip cards to find matching pairs within a limited time. Challenge yourself and improve your memory with this engaging game.
+
+
 ### TicTacToe
 
 TicTacToe is a two-player game where you compete to get three of your marks in a row, either horizontally, vertically, or diagonally. Challenge your friends or play against the computer in this timeless game of strategy.
