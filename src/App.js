@@ -6,11 +6,13 @@ import Calculator from "./pages/Calculator";
 import ToDoList from "./pages/ToDoList";
 import Quiz from "./pages/Quiz";
 import MemoryGame from "./pages/MemoryGame";
+import Navbar from "./components/Navbar";
 
 const App = () => {
   return (
     <Router>
-      <div className="flex bg-slate-700 h-[100vh] font-mono">
+      <div className="flex flex-col bg-slate-700 h-[100vh] font-mono">
+        <Navbar/>
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/tic-tac-toe" element={<TicTacToe/>} />
