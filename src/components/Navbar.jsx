@@ -17,27 +17,27 @@ const Navbar = () => {
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
-                <NavLink to="/" activeClassName="text-white">
+                <a href="/" activeClassName="text-white">
                   Home
-                </NavLink>
-                <NavLink to="/tic-tac-toe" activeClassName="text-white">
+                </a>
+                <a href="/tic-tac-toe" activeClassName="text-white">
                   TicTacToe
-                </NavLink>
-                <NavLink to="/to-do" activeClassName="text-white">
+                </a>
+                <a href="/to-do" activeClassName="text-white">
                   TodoList
-                </NavLink>
-                <NavLink to="/snake" activeClassName="text-white">
+                </a>
+                <a href="/snake" activeClassName="text-white">
                   Snake Game
-                </NavLink>
-                <NavLink to="/memory-game" activeClassName="text-white">
+                </a>
+                <a href="/memory-game" activeClassName="text-white">
                   Memory Game
-                </NavLink>
-                <NavLink to="/calculator" activeClassName="text-white">
+                </a>
+                <a href="/calculator" activeClassName="text-white">
                   Calculator
-                </NavLink>
-                <NavLink to="/quiz" activeClassName="text-white">
+                </a>
+                <a href="/quiz" activeClassName="text-white">
                   Quiz
-                </NavLink>
+                </a>
               </div>
             </div>
           </div>
@@ -72,27 +72,27 @@ const Navbar = () => {
           id="mobile-menu"
         >
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <NavLink to="/" activeClassName="text-white">
+            <a href="/" activeClassName="text-white">
               Home
-            </NavLink>
-            <NavLink to="/tic-tac-toe" activeClassName="text-white">
+            </a>
+            <a href="/tic-tac-toe" activeClassName="text-white">
               TicTacToe
-            </NavLink>
-            <NavLink to="/to-do" activeClassName="text-white">
+            </a>
+            <a href="/to-do" activeClassName="text-white">
               TodoList
-            </NavLink>
-            <NavLink to="/snake" activeClassName="text-white">
+            </a>
+            <a href="/snake" activeClassName="text-white">
               Snake Game
-            </NavLink>
-            <NavLink to="/memory-game" activeClassName="text-white">
+            </a>
+            <a href="/memory-game" activeClassName="text-white">
               Memory Game
-            </NavLink>
-            <NavLink to="/calculator" activeClassName="text-white">
+            </a>
+            <a href="/calculator" activeClassName="text-white">
               Calculator
-            </NavLink>
-            <NavLink to="/quiz" activeClassName="text-white">
+            </a>
+            <a href="/quiz" activeClassName="text-white">
               Quiz
-            </NavLink>
+            </a>
           </div>
         </div>
       </div>
