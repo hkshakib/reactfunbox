@@ -54,7 +54,7 @@ function ToDoList() {
 
   const markAsDone = (index) => {
     const updatedTodos = [...todos];
-    updatedTodos[index] = newTodo + ' (Done)';
+    updatedTodos[index] = updatedTodos[index] + ' (Done)';
     setTodos(updatedTodos);
   };
 
@@ -90,7 +90,7 @@ function ToDoList() {
                     <FaCheck className='mr-2 text-green-500' />
                   ) : null}
                   <div className={`flex flex-1 text-white text-[16px] ${todo.includes('(Done)') ? 'line-through' : ''}`}>
-                    {index + 1}. {todo.replace(' (Done)', '')}
+                    {index + 1}. {todo.replace(' (Done)','')}
                   </div>
                   <button
                     className='flex justify-center items-center h-[30px] uppercase ml-8 mt-2 border border-white w-[100px] rounded text-white hover:bg-red-200 hover:text-black'
