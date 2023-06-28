@@ -74,7 +74,7 @@ function ToDoList() {
             value={newTodo}
             onChange={handleChange}
             placeholder='Add Your Work'
-            className='flex w-[500px] h-[50px] p-4 rounded'
+            className='flex w-[200px] h-[20px] md:w-[500px] md:h-[50px] p-4 rounded'
           />
           <button onClick={addTodo} className='ml-2 border border-white w-[100px] rounded text-white hover:bg-slate-500 hover:text-black'>
             {editMode ? 'Update' : 'Add'}
@@ -85,28 +85,28 @@ function ToDoList() {
           <ul>
             {todos.map((todo, index) => (
               <li key={index} className='flex'>
-                <div className='flex border border-white mt-[10px] items-center justify-center h-[70px]  p-2'>
+                <div className='flex border border-white mt-[10px] items-center justify-center w-[250px] h-[70px] md:w-[500px] p-2'>
                   {todo.includes('(Done)') ? (
                     <FaCheck className='mr-2 text-green-500' />
                   ) : null}
-                  <div className={`flex flex-1 text-white text-[16px] ${todo.includes('(Done)') ? 'line-through' : ''}`}>
+                  <div className={`flex flex-1 text-white text-[10px] md:text-[16px] ${todo.includes('(Done)') ? 'line-through' : ''}`}>
                     {index + 1}. {todo.replace(' (Done)','')}
                   </div>
                   <button
-                    className='flex justify-center items-center h-[30px] uppercase ml-8 mt-2 border border-white w-[100px] rounded text-white hover:bg-red-200 hover:text-black'
+                    className='flex justify-center items-center text-[10px] md:text-[14px] h-[15px] md:h-[30px] uppercase ml-1 md:ml-8 mt-2 border border-white w-[50px] md:w-[100px] rounded text-white hover:bg-red-200 hover:text-black'
                     onClick={() => editTodo(index)}
                   >
                     Edit
                   </button>
                   <button
-                    className='flex justify-center items-center h-[30px] uppercase ml-8 mt-2 border border-white w-[100px] rounded text-white hover:bg-red-500 hover:text-white'
+                    className='flex justify-center items-center text-[10px] md:text-[14px] h-[15px] md:h-[30px] uppercase ml-1 md:ml-8 mt-2 border border-white w-[50px] md:w-[100px] rounded text-white hover:bg-red-500 hover:text-white'
                     onClick={() => removeTodo(index)}
                   >
                     Delete
                   </button>
                   {!todo.includes('(Done)') && (
                     <button
-                      className='flex justify-center items-center h-[30px] uppercase ml-8 mt-2 border border-white w-[100px] rounded text-white hover:bg-green-500 hover:text-white'
+                      className='flex justify-center items-center text-[10px] md:text-[14px] h-[15px] md:h-[30px] uppercase ml-1 md:ml-8 mt-2 border border-white w-[50px] md:w-[100px] rounded text-white hover:bg-green-500 hover:text-white'
                       onClick={() => markAsDone(index)}
                     >
                       Done
